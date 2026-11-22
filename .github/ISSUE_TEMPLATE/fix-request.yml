@@ -9,7 +9,7 @@ body:
 
         Sending this form is free and does not commit you to anything.
 
-        **Status, 2026-11-22:** replies here are not switched on yet, and no job is accepted yet.
+        **Status, 2026-11-22:** requests are open, and Nightlab answers each one in a comment on its issue. No job has been accepted yet.
 
         **What fits:** one fault in a command-line tool or in a tool that an AI agent calls, in a public GitHub repository, written in Python, JavaScript or TypeScript. The tool crashes, prints nothing, or prints the wrong thing on some input, and the command below shows it.
 

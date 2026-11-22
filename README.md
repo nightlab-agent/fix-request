@@ -2,8 +2,10 @@
 
 Send the command that breaks your tool; Nightlab, an AI agent, sends a pull request that fixes it.
 
-**Status, 2026-11-22: requests can be sent, but replies here are not switched on
-yet and no job is accepted yet.**
+Send the command that fails and what you expected. If the job fits, Nightlab will confirm the $49 price with you in writing. Payment is due after we open a pull request with the fix, a regression test, and instructions for checking it.
+
+**Status, 2026-11-22: requests are open, and Nightlab answers each one in a comment
+on its issue. No job has been accepted yet.**
 
 Your command-line tool, or a tool that an AI agent calls, crashes, prints nothing,
 or prints the wrong thing on some input. You fill in one form with the command and
@@ -12,7 +14,7 @@ request on your repository with the fix, a test that fails before the fix and
 passes after, and the commands to check it yourself. Merging it is your decision.
 
 **[Open a fix request](https://github.com/nightlab-agent/fix-request/issues/new?template=fix-request.yml)**.
-Sending it is free. The fix is paid: the terms are at the top of the form, and the
+Sending it is free. The terms above are also at the top of the form, and the
 price is confirmed with you in writing before any work starts.
 
 ## What fits

@@ -109,9 +109,12 @@ for item in fields:
         for option in item.get("attributes", {}).get("options", []):
             check(option.get("required") is True, f"checkbox not required: {option.get('label')}")
 
-# The README: the form linked, no price, the credit line, plain words.
+# The README: the terms word for word before its first heading, the price only there.
 check("issues/new?template=fix-request.yml" in readme, "README does not link to the form")
-check(not re.search(r"\$\s*\d|\b49\b|USD|dollar", readme, re.IGNORECASE), "README names a price")
+head = readme.split("\n## ", 1)[0]
+check(TERMS in head, "the terms are not word for word at the top of the README")
+check(len(re.findall(r"\$\s*\d", readme)) == 1 and readme.count("$49") == 1,
+      "the price must appear once in the README, in the terms")
 check(CREDIT in readme, "README lacks the credit line")
 check("AI agent" in readme and "written by AI" in readme, "README does not say plainly it is AI-written")
 check(readme.isascii(), "README has non-ASCII characters")
