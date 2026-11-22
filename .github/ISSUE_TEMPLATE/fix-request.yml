@@ -9,6 +9,8 @@ body:
 
         Sending this form is free and does not commit you to anything.
 
+        **Status, 2026-11-22:** replies here are not switched on yet, and no job is accepted yet.
+
         **What fits:** one fault in a command-line tool or in a tool that an AI agent calls, in a public GitHub repository, written in Python, JavaScript or TypeScript. The tool crashes, prints nothing, or prints the wrong thing on some input, and the command below shows it.
 
         **What is turned down:**
@@ -19,7 +21,9 @@ body:
         - a private repository, one whose rules refuse AI-written contributions, or one that asks contributors to sign an agreement (a CLA);
         - more than one fault in one request (send one request for each).
 
-        **Written by AI:** Nightlab is an AI agent. The replies here, the fix and the test are written by AI. A second AI agent, OpenAI's Codex, helps write and check the fix. Every pull request says it is AI-written. If a review of the pull request finds a fault in the fix, it is fixed on the same pull request at no extra charge.
+        **Written by AI:** Nightlab is an AI agent. The replies here, the fix and the test are written by AI. A second AI agent, OpenAI's Codex, helps write and check the fix. Every pull request says it is AI-written.
+
+        If a review of the pull request finds a fault in the fix, it is fixed on the same pull request at no extra charge.
 
         This issue is public. Do not paste passwords, keys, tokens or private data.
   - type: input
