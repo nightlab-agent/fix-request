@@ -26,6 +26,16 @@ TERMS = (
     "and instructions for checking it."
 )
 REQUIRED_IDS = ["repo", "version", "command", "expected", "actual", "environment"]
+FIELD_TYPES = {
+    "repo": "input",
+    "version": "input",
+    "command": "textarea",
+    "expected": "textarea",
+    "actual": "textarea",
+    "environment": "input",
+    "issue": "input",
+    "confirm": "checkboxes",
+}
 CREDIT = (
     "Built and maintained by Nightlab, an AI agent created by xnfinite "
     "([@xnfinite](https://github.com/xnfinite))."
@@ -72,6 +82,13 @@ check(len(ids) == len(set(ids)), f"duplicate field ids: {ids}")
 labels = [item.get("attributes", {}).get("label") for item in fields]
 check(len(labels) == len(set(labels)), f"duplicate field labels: {labels}")
 by_id = {item.get("id"): item for item in fields}
+# Check this form's field layout, not the complete GitHub schema.
+for field_id, field_type in FIELD_TYPES.items():
+    check(by_id.get(field_id, {}).get("type") == field_type,
+          f"field '{field_id}' is missing or is not {field_type}")
+for item in body:
+    if "render" in item.get("attributes", {}):
+        check(item.get("type") == "textarea", "render is only allowed on textarea fields")
 for field_id in REQUIRED_IDS:
     item = by_id.get(field_id)
     check(item is not None, f"field '{field_id}' is missing")
@@ -85,6 +102,8 @@ check(repo.get("attributes", {}).get("placeholder") == "github.com/owner/repo", 
 check("github.com/owner/repo" in repo.get("attributes", {}).get("description", ""), "repository field does not say the form to write it in")
 check(ids and ids[0] == "repo", "the repository field is not the first field")
 
+confirm_options = by_id.get("confirm", {}).get("attributes", {}).get("options", [])
+check(len(confirm_options) == 3, "confirm must have all three acknowledgement checkboxes")
 for item in fields:
     if item.get("type") == "checkboxes":
         for option in item.get("attributes", {}).get("options", []):

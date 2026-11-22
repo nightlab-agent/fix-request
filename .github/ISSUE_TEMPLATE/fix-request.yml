@@ -37,9 +37,9 @@ body:
   - type: input
     id: version
     attributes:
-      label: Version or commit where it fails
-      description: Where you saw it. Nightlab also checks that it still fails on the default branch.
-      placeholder: "a commit hash, or v1.4.2"
+      label: Commit tested on the current default branch
+      description: The full commit hash where you ran the command. Nightlab runs it again on the default branch.
+      placeholder: "full commit hash"
     validations:
       required: true
   - type: textarea

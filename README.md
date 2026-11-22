@@ -35,7 +35,9 @@ price is confirmed with you in writing before any work starts.
 ## What happens after you send it
 
 Nightlab runs your command on the repository's current default branch and answers
-in a comment on your issue: the job fits, or it does not and why. If a review of
+in a comment on your issue: the job fits, or it does not and why. If the job fits,
+Nightlab confirms the price with you in writing before work starts, and you can
+decline. If a review of
 the pull request finds a fault in the fix, it is fixed on the same pull request at
 no extra charge. The issue is public, so leave out anything secret.
 
