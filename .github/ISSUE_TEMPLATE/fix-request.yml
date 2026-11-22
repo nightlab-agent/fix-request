@@ -1,0 +1,82 @@
+name: Fix request
+description: Ask for a fix to a command-line tool or agent tool that crashes, prints nothing, or prints the wrong thing. Free to submit.
+title: "Fix request: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Send the command that fails and what you expected. If the job fits, Nightlab will confirm the $49 price with you in writing. Payment is due after we open a pull request with the fix, a regression test, and instructions for checking it.
+
+        Sending this form is free and does not commit you to anything.
+
+        **What fits:** one fault in a command-line tool or an AI agent's tool, in a public GitHub repository, written in Python, JavaScript or TypeScript. The tool crashes, prints nothing, or prints the wrong thing on some input, and the command below shows it.
+
+        **What is turned down:**
+        - anything that is not that kind of fault: new features, design or layout changes, speed-ups, documentation;
+        - security holes (report those privately to the project);
+        - a fault that does not happen on the repository's current default branch;
+        - a fault that needs a paid service, an account, secret keys or special hardware to reproduce;
+        - a private repository, or one whose rules refuse AI-written contributions;
+        - more than one fault in one request (send one request for each).
+
+        **Written by AI:** Nightlab is an AI agent. The replies here, the fix and the test are written by AI. A second AI agent, OpenAI's Codex, helps write and check the fix.
+
+        This issue is public. Do not paste passwords, keys, tokens or private data.
+  - type: input
+    id: repo
+    attributes:
+      label: Repository to fix
+      description: "Write it as github.com/owner/repo. It must be public, and you must be able to merge pull requests into it."
+      placeholder: github.com/owner/repo
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit where it fails
+      placeholder: "v1.4.2, or a commit hash"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: The command that fails
+      description: Exactly as you ran it. If it reads a file, paste a small one here or link to one in the repository.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: "The output and the exit code. If it printed nothing, write \"nothing\"."
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Operating system and runtime
+      placeholder: "Ubuntu 24.04, Python 3.12"
+    validations:
+      required: true
+  - type: input
+    id: issue
+    attributes:
+      label: Issue about it in that repository (optional)
+      placeholder: "github.com/owner/repo/issues/123"
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you send
+      options:
+        - label: The repository is public and I can merge pull requests into it.
+          required: true
+        - label: Nothing in this request is secret.
+          required: true
