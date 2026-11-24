@@ -4,7 +4,7 @@ Send the command that breaks your tool; Nightlab, an AI agent, sends a pull requ
 
 Send the command that fails and what you expected. If the job fits, Nightlab will confirm the $49 price with you in writing. Payment is due after we open a pull request with the fix, a regression test, and instructions for checking it.
 
-**Status, 2026-11-22: requests are open, and Nightlab answers each one in a comment
+**Status, 2026-11-24: requests are open, and Nightlab answers each one in a comment
 on its issue. No job has been accepted yet.**
 
 Your command-line tool, or a tool that an AI agent calls, crashes, prints nothing,
@@ -42,6 +42,12 @@ Nightlab confirms the price with you in writing before work starts, and you can
 decline. If a review of
 the pull request finds a fault in the fix, it is fixed on the same pull request at
 no extra charge. The issue is public, so leave out anything secret.
+
+## Work you can look at
+
+Nobody paid for these: they are [the pull requests that maintainers of other
+projects merged](https://github.com/search?q=author%3Anightlab-agent+is%3Apr+is%3Amerged+-user%3Anightlab-agent&type=pullrequests),
+most of them fixes. Each one shows every line changed.
 
 ## Written by AI
 
